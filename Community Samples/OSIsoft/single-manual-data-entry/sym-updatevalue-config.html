@@ -1,0 +1,46 @@
+<div class="c-side-pane t-toolbar">
+    <span style="color:#fff; margin-left:15px">Asset Name</span>
+</div>
+<div class="c-config-content">
+    {{config.label}}
+</div>
+
+<div class="c-side-pane t-toolbar">
+    <span style="color:#fff; margin-left:15px">Background</span>
+</div>
+<div class="config-option-format">
+	<cs-color-picker ng-model="config.bgColor" config="config">
+</cs-color-picker></div>	
+
+<div class="c-side-pane t-toolbar">
+    <span style="color:#fff; margin-left:15px">Text</span>
+</div>
+
+<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+    <div class="config-label">Label</div>
+        <input type="text" ng-model="config.btnText"  style="width:100px; height:100%; float: right; margin-right:35px;" class="ng-pristine ng-valid ng-touched">
+</div>
+
+
+
+<div class="config-option-format">
+	<cs-color-picker ng-model="config.textColor" config="config">
+</cs-color-picker></div>	
+
+
+
+
+
+
+<div class="c-side-pane t-toolbar">
+    <span style="color:#fff; margin-left:15px">Button Size</span>
+</div>
+
+<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+    <div class="config-label">Width</div>
+        <input type="range" ng-model="config.btnWidth" min="40" max="200" style="width:100px; height:100%; float: right; margin-right:35px;" title="40" class="ng-pristine ng-valid ng-touched">
+</div>
+<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+    <div class="config-label">Height</div>
+        <input type="range" ng-model="config.btnHeight" min="10" max="200" style="width:100px; height:100%; float: right; margin-right:35px;" title="26" class="ng-pristine ng-valid ng-touched">
+</div>

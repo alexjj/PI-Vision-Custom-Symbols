@@ -1,0 +1,67 @@
+<!--
+	Copyright 2016-2017 OSIsoft, LLC.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+		<span class="panel-bar-label-no-wrap">General</span>
+		<div style="margin:10px 0px 15px 15px;display:block;width:85%" role="region" class="k-content">
+			<div style="margin:4px 0 0 4px">
+				<div class="config-option-single-row">
+					<div class="config-option-ie11-overflow-fix">
+						<div class="config-label"> AF Server </div>
+						<select class="config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.selectedAFServer" ng-options="server.Name for server in runtimeData.afServers" ng-change="config.getAFDatabases()" ></select>
+					</div>
+					
+				</div>
+				<div class="config-option-single-row">
+					<div class="config-option-ie11-overflow-fix">
+						<div class="config-label"> AF Database </div>
+						<select class="config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.selectedAFDatabase" ng-options="database.Name for database in runtimeData.afDatabases" ng-change="config.getAFTables()"></select>						
+					</div>
+				</div>			
+				<div class="config-option-single-row">
+					<div class="config-option-ie11-overflow-fix">
+						<div class="config-label"> AF Table </div>
+						<select class="config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.selectedAFTable" ng-options="table.Name for table in runtimeData.afTables" ng-change="config.getAFTableData()"></select>							
+					</div>
+				</div>
+			</div>
+		</div>
+
+    </li>
+	
+	<li class="k-state-active">
+	    <span class="panel-bar-label-no-wrap">About</span>
+	
+		<div role="region"> 
+			<div class="config-option-format">   
+				This is an example of custom symbol made with the PI Vision Extensibility Framework.
+			</div>	
+			<div class="config-option-format">   
+				<a  href="https://github.com/AnnaPerry/PI-Coresight-Custom-Symbols/tree/master/Community%20Samples/OSIsoft/af-table" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/GitHub-Mark-32px.png" alt="GitHub repository with source code" height="32" width="32"/>
+				</a>
+				<span>Explore source code.</span>
+			</div>	
+			<div class="config-option-format">   
+				<a href="https://pisquare.osisoft.com/community/developers-club/pi-visualization-development" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/Q.png" alt="PI Square public forum" height="32" width="32"/>
+				</a>	
+				Need help? Ask PI Square.
+			</div>					
+		</div>
+    </li>
+</ul> 

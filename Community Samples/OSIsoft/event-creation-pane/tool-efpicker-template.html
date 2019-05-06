@@ -1,0 +1,16 @@
+Database:
+<select ng-options="database.Name for database in databases track by database.Path"
+ng-model="selectedDatabase">
+</select><br>
+
+Event Template (not working yet):
+<select ng-model="selectedTemplate">
+        <option ng-repeat="item in EFTemplates" value="{{item}}">{{item}}</option>
+        
+</select><br>
+
+<input value="{{properties.startTime}}"></input><br>
+<input value="{{properties.endTime}}"></input><br>
+<input placeholder="{{properties.eventName}}" ng-model="properties.eventName"></input><br>
+
+<button id="CreateEF" style="background-color: #4CAF50;color:white;border: none;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px" ng-click="createEF(selectedDatabase, properties.startTime, properties.endTime, selectedTemplate, properties.eventName)">Create Event Frame</button>

@@ -1,0 +1,110 @@
+ul.custom-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.custom-menu > li {
+    float: left;
+}
+
+ul.custom-menu li 
+ul.custom-menu a, 
+.custom-dropdown-button {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	   background-color: #2a3e5d;
+}
+
+ul.custom-menu li a:hover, .custom-dropdown:hover .custom-dropdown-button {
+    background-color: #2a3e5d;
+}
+
+li.custom-dropdown {
+    display: inline-block;
+}
+
+.custom-cursor-pointer {
+    cursor: pointer;
+}
+
+.custom-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.custom-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.custom-dropdown-content a:hover {background-color: #f1f1f1}
+
+.custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+}
+
+table.custom-config-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.custom-config-table td,
+table.custom-config-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table.custom-config-table tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+table.custom-config-table tbody > tr > td {
+    text-align: left; 
+    vertical-align: middle;
+}
+
+table.custom-config-table tbody > tr > td > input {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+button.custom-config-button {
+	background-color: #2a3e5d;
+	color: #fff;
+	float: right;
+	height: 25px;
+	width: 40%;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+	margin-left: auto;
+	border: 1px solid rgba(230,231,232,.55);
+}
+
+.removebutton {
+	width: 40%;
+	max-width: 30px;
+	margin-left: auto;
+	display: block;
+    margin: 0 auto;
+    outline: none;
+}
+
+.custom-disabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}

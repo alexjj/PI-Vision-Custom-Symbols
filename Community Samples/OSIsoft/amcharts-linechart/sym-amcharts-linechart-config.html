@@ -1,0 +1,160 @@
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+	
+        <span class="panel-bar-label-no-wrap">General</span>
+
+		<div role="region"> 
+			<div class="config-option-format">   
+				<pv-color-picker colorkeyword="Background" ng-model="config.BackgroundColor" config="config"></pv-color-picker>
+			</div>
+			<div class="config-option-format">   
+				<pv-color-picker colorkeyword="Text" ng-model="config.TextColor" config="config"></pv-color-picker>
+			</div>		
+			
+			<div class="config-option-format">   
+				placeholder for Single/Multi Scale 
+				
+			</div>	
+			<div class="config-option-format">   
+				<div class="config-option-single-row" style="margin: 4px 0;">
+					<div class="config-label">Scale Minimum:</div>
+					<input class="config-option-single-row-input" type="number" max="{{config.ScaleMax}}" ng-model="config.ScaleMin">
+				</div>
+			</div>			
+			<div class="config-option-format">   
+				<div class="config-option-single-row" style="margin: 4px 0;">
+					<div class="config-label">Scale Maximum:</div>
+					<input class="config-option-single-row-input" type="number" min="{{config.ScaleMin}}" ng-model="config.ScaleMax">
+				</div>
+			</div>			
+		</div>
+		
+		
+    </li>
+
+     <li class="k-state-active">
+	 
+        <span class="panel-bar-label-no-wrap">Display Format</span>
+
+		<div role="region">
+	
+			<div class="config-option-format">   
+				placeholder to Enable / disable Markers (bullets)
+			</div>	
+			
+			<div class="config-option-format">
+				<div class="config-option-single-row" style="margin: 4px 0;">
+					<div class="config-label">Label Rotation:</div>
+					<input class="config-option-single-row-input" type="range" min="0" max="360" step="5" ng-model="config.LabelRotation" style="width:100px; height:100%;" title="{{config.LabelRotation}}">
+				</div>
+			</div>
+			<div class="config-option-format">
+				<label>
+					<input type="radio" class="c-config-radio"  ng-model="config.Rotate" ng-value="false">
+					<img src="Scripts/app/editor/symbols/ext/Icons/sin-right.png" width="30" height="30"/>				
+				</label>
+				<label>
+					<input type="radio" class="c-config-radio"  ng-model="config.Rotate" ng-value="true">
+					<img src="Scripts/app/editor/symbols/ext/Icons/sin-down.png" width="30" height="30"/>
+				</label>		
+			</div>	
+		
+			<div class="config-option-format">
+				<div class="config-option-single-row" style="margin: 4px 0;">
+					<div class="config-label">Legend Position</div>
+					<select class=" config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.LegendPosition" ng-options="position for position in runtimeData.Positions" style="margin-top: 10px;"></select>						
+				</div>
+			</div>
+		</div>
+		       
+    </li>
+
+	
+    <li class="k-state-active">
+	       <span class="panel-bar-label-no-wrap">Trace Format</span>
+		
+		   
+		<div role="region"> 
+			<div style="width: 85%; margin: 10px 0 15px 15px;">
+				
+				<div class="trend-config-trace-list" tabindex="0" style="padding: 4px">
+					<div ng-repeat="trace in config.Graphs"
+						ng-init="runtimeData.selectedTrace = 0"
+						ng-click="runtimeData.selectedTrace = $index"
+						ng-style="config.Graphs.length > 1 && runtimeData.selectedTrace === $index && { 'background-color' : '#d5d5d5' }"
+						class="trend-config-trace-list-item"
+						title="test">{{trace.title}}</div>
+				</div>
+			
+			
+				<div class="c-button-default-container" style="padding: 4px 4px 0 4px; margin-top: 0; margin-bottom: 0" ng-if="config.Graphs.length > 1">
+					<button type="button" class="c-primary-button trend-config-trace-arrange-button"
+							ng-click="runtimeData.deleteTrace(this.$parent)">
+						<span class="k-icon k-delete"></span>
+					</button>
+				</div>
+
+			
+				<div class="config-option-single-row" style="margin-top: 10px;">
+					<div class="config-label"> Trace Type </div>
+					<select class=" config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.Graphs[runtimeData.selectedTrace].type" ng-options="type for type in runtimeData.GraphTypes" style="margin-top: 10px;"></select>						
+				</div>
+				<div style="margin-top: 10px;">
+						<pv-color-picker colorkeyword="Line Color:" ng-model="config.Graphs[runtimeData.selectedTrace].lineColor" config="config"></pv-color-picker>
+				</div>		
+					
+				<div class="config-option-single-row" style="margin: 4px 0;" ng-show="config.Graphs[runtimeData.selectedTrace].type == 'column'">
+					<div class="config-option-ie11-overflow-fix">
+						<div class="config-label">Column Width:</div>
+						<input class="config-option-single-row-input" type="range" min="5" max="60" step="1" ng-model="config.Graphs[runtimeData.selectedTrace].fixedColumnWidth" style="width:100px; height:100%;" title="{{config.Graphs[runtimeData.selectedTrace].fixedColumnWidth}}">
+					</div>
+				</div>
+			
+				<div class="config-option-single-row" style="margin: 4px 0;">
+					<div class="config-option-ie11-overflow-fix">
+						<div class="config-label">Line Weight:</div>
+						<input class="config-option-single-row-input" type="range" min="0.7" max="4.7" step="0.5" ng-model="config.Graphs[runtimeData.selectedTrace].lineThickness" style="width:100px; height:100%;" title="{{config.Graphs[runtimeData.selectedTrace].lineThickness}}">
+					</div>
+				</div>
+				
+				<div class="config-option-single-row"  >
+					<div class="config-label"> Marker Type </div> 
+					<select class="config-option-single-row-input trend-config-option-list c-color-selector-input"  ng-model="config.Graphs[runtimeData.selectedTrace].bullet" ng-options="bullet for bullet in runtimeData.Bullets" style="margin-top: 10px;"></select>					
+				</div>
+				<div style="margin-top: 10px;">
+					<pv-color-picker colorkeyword="Marker Color:" ng-model="config.Graphs[runtimeData.selectedTrace].bulletColor" config="config"></pv-color-picker>
+				</div>
+					    
+		</div>
+   
+    </div>
+
+   </li>
+	
+	
+	 <li class="k-state-active">
+       <span class="panel-bar-label-no-wrap">About</span>    
+    
+		<div role="region"> 
+			<div class="config-option-format">   
+				This is an example of custom symbol made with the PI Vision Extensibility Framework.
+			</div>	
+			<div class="config-option-format">   
+				<a  href="https://github.com/AnnaPerry/PI-Coresight-Custom-Symbols/tree/master/Community%20Samples/OSIsoft/amcharts-linechart" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/GitHub-Mark-32px.png" alt="GitHub repository with source code" height="32" width="32"/>
+				</a>
+				<span>Explore source code.</span>
+			</div>	
+			<div class="config-option-format">   
+				<a href="https://pisquare.osisoft.com/community/developers-club/pi-visualization-development" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/Q.png" alt="PI Square public forum" height="32" width="32"/>
+				</a>	
+				Need help? Ask PI Square.
+			</div>					
+		</div>
+		
+		
+    </li>
+</ul>
+
+

@@ -1,0 +1,39 @@
+ <div class="table-responsive"> 
+	<table  class="table">
+		<thead ng-style="{'color':config.TextColor}">
+		  <tr >
+			<th ng-show="config.showFriendlyAttName"><b>Name</b></th>
+			 <th ng-show="config.showAttribute" ><b>Attribute</b></th>
+			 <th ng-show="config.showTimestamp"><b>Timestamp</b></th>
+			 <th><b>Enter Value</b></th>
+			 <th ng-show="config.showCurrentValue"><b>Current Value</b></th>
+			 <th><b>Select All  </b><input type="checkbox" style="vertical-align: middle;" ng-model="isAllSelected" ng-change="toggleAll(runtimeData.streamList)"/></th>
+		  </tr>
+		</thead>
+		<tbody ng-style="{'color':config.TextColor}">
+			<tr ng-repeat="stream in runtimeData.streamList" >
+				<td ng-show="config.showFriendlyAttName" style="text-align: left; vertical-align: middle;"><input type="text" ng-style="{'color':config.TextColor}" style="background-color:transparent; border-color:transparent" ng-model="config.streamFriendlyNames[$index]"/></td>
+				<td ng-show="config.showAttribute" style="text-align: left; vertical-align: middle;">{{stream.Label}}</td>
+				<td style="vertical-align: middle;" ng-show="config.showTimestamp" ><input type="text" ng-model="stream.Timestamp"/></td>
+				<td style="vertical-align: middle;">
+					<input ng-if="!stream.IsEnumerationType" type="{{stream.Type}}" ng-model="stream.Value" ng-style="{'width': config.valColWidth, 'max-width': '300px'}" />
+					<select ng-if="stream.IsEnumerationType" ng-options="option.Name for option in stream.EnumerationOptions track by option.Id" ng-model="stream.Value" ng-style="{'width': config.valColWidth, 'max-width': '300px'}"></select>
+				</td>
+				<td ng-show="config.showCurrentValue" style="text-align: left; vertical-align: middle;">{{stream.CurrentValue}} {{stream.UOM}}</td>
+				<td style="vertical-align: middle;"><input type="checkbox"  ng-model="stream.IsSelected" ng-change="toggleStreamSelection()"/></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<button ng-click="sendValues()" ng-disabled="!isBtnEnabled" ng-style="{ 'background-color': config.bgColor,
+																			    'color': config.ButtonTextColor,
+																				'width': config.btnWidth, 
+																				'height': config.btnHeight, 
+																				'text-shadow': '0 -1px 0 rgba(0,0,0,.25)',
+																				'margin-left': 'auto',
+																				'border': '1px solid rgba(230,231,232,.55)',
+																				'opacity': isBtnEnabled ? '1' : '0.65'}">
+<img src="Scripts/app/editor/symbols/ext/Icons/loading.gif" ng-show="loading" />
+{{config.btnText}}
+</button>

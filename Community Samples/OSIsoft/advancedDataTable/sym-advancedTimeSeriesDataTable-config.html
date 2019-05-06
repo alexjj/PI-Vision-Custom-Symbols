@@ -1,0 +1,173 @@
+<!--
+	Copyright 2016-2017 OSIsoft, LLC.
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<!--<div style="width: 85%; margin: 15px 0px 15px 15px; display: block;background-color:transparent;font-size:14px;" class="k-content" role="region" aria-hidden="true">
+    &nbsp;Default Order<br>
+    <select ng-model="config.defaultOrder" ng-model-options="{ getterSetter: true }" class="ng-pristine ng-valid" style="margin-top: 10px;background-color:transparent;padding:5px">
+        <option value="descending">Descending</option>
+        <option value="ascending">Ascending</option>
+    </select>
+</div>-->
+<div style="width: 85%; margin: 15px 0px 15px 15px; display: block;background-color:transparent;font-size:14px;" class="k-content" role="region" aria-hidden="true">
+    &nbsp;Data Query Mode<br>
+    <select ng-model="config.dataQueryType" ng-model-options="{ getterSetter: true }" class="ng-pristine ng-valid" style="margin-top: 10px;background-color:transparent;padding:5px">
+        <option value="compressed">Compressed (Raw Archive) Data</option>
+        <option value="sampled">Sampled (Interpolated) Data</option>
+    </select>
+</div>
+
+
+<div class="config-option-single-row" style="margin-left:20px;margin-right:20px;font-size:14px;margin-top:8px;" ng-show="config.dataQueryType == 'sampled'">
+    <div class="config-option-ie11-overflow-fix">
+	   Interval
+        <input type="number" class="" style="text-align:center;margin-left:8px;width:60px;"
+		   ng-model="config.interpolationInterval">
+        <select ng-model="config.interpolationUnits" ng-model-options="{ getterSetter: true }" class="config-option-single-row-input ng-pristine ng-valid" style="margin-top: 5px;background-color:transparent;padding:4px;">
+            <option value="seconds">seconds</option>
+            <option value="minutes">minutes</option>
+            <option value="hours">hours</option>
+            <option value="days">days</option>
+        </select>
+    </div>
+</div>
+<br ng-show="config.dataQueryType == 'sampled'"/>
+
+
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;font-size:14px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.transposeTable">Transpose Table<br />
+</label>
+
+<br/>
+<br/>
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Conditional Formatting</span>
+</div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;font-size:14px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.applyConditionalFormatting">Use Conditional Formatting<br />
+</label>
+<div style="width: 85%; margin: 15px 0px 15px 15px; display: block;background-color:transparent;font-size:14px;" class="k-content" role="region" aria-hidden="true" ng-show="config.applyConditionalFormatting">
+    &nbsp;Apply Formatting To<br>
+    <select ng-model="config.applyConditionalFormattingTo" ng-model-options="{ getterSetter: true }" class="ng-pristine ng-valid" style="margin-top: 10px;background-color:transparent;padding:5px">
+        <option value="background-color">Cell Backgrounds</option>
+        <option value="color">Cell Text</option>
+    </select>
+</div>
+<br ng-show="config.applyConditionalFormatting"/>
+<div class="c-side-pane t-toolbar" ng-show="config.applyConditionalFormatting">
+	<span style="color:#fff; margin-left:10px;">Conditional Formatting Limits</span>
+</div>
+
+<div ng-repeat="i in [0,1,2,3,4,5,6,7,8,9,10,11] track by $index">
+    <div ng-show="config.applyConditionalFormatting && (config.numberOfDataItems > i)">
+        <label class="flex-align-center" style="font-size:14px;margin-top:8px; margin-left: 8px; margin-right: 8px;margin-bottom:5px;">
+            <input type="text" class="" style="width:30px;margin-left:8px;margin-right: 8px;padding:2px;" ng-model="config.dataItemThresholdsArray[i]">
+            <select ng-model="config.conditionalOperatorsArray[i]" ng-model-options="{ getterSetter: true }" class="ng-pristine ng-valid" style="margin-right: 8px;background-color:transparent;padding:2px 0px 2px 2px">
+                <option value="lessthan">&lt</option>
+                <option value="lessthanorequalto">&lt=</option>
+                <option value="equalto">=</option>
+                <option value="greaterthanorequalto">&gt=</option>
+                <option value="greaterthan">&gt</option>
+                <option value="like">like</option>
+                <option value="notused"></option>                
+            </select> 
+            {{config.customDataItemNamesArray[i]}}
+            <select ng-model="config.conditionalOperatorsArray2[i]" ng-model-options="{ getterSetter: true }" class="ng-pristine ng-valid" style="margin-left: 8px;background-color:transparent;padding:2px 0px 2px 2px">
+                <option value="notused"></option>
+                <option value="lessthan">&lt</option>
+                <option value="lessthanorequalto">&lt=</option>
+                <option value="equalto">=</option>
+                <option value="greaterthanorequalto">&gt=</option>
+                <option value="greaterthan">&gt</option>
+                <option value="like">like</option>
+            </select>
+            <input type="text" class="" style="width:30px;margin-left:8px;margin-right: 8px;padding:2px;" ng-model="config.dataItemThresholdsArray2[i]" ng-show="config.conditionalOperatorsArray2[i] != 'notused'">
+        </label> 
+        <div class="config-option-format" ng-show="config.applyConditionalFormatting">
+            <pv-color-picker id="evenRowColor" ng-model="config.testTrueColors[i]" config="config" colorkeyword="Color if true">
+        </pv-color-picker></div>
+        <div class="config-option-format" ng-show="config.applyConditionalFormatting">
+            <pv-color-picker id="evenRowColor" ng-model="config.testFalseColors[i]" config="config" colorkeyword="Color if false">
+        </pv-color-picker></div>
+        <br />
+    </div>
+</div>
+<br/>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Row Colors</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="evenRowColor" ng-model="config.evenRowColor" config="config" colorkeyword="Even Rows">
+</pv-color-picker></div>
+<div class="config-option-format">
+	<pv-color-picker id="oddRowColor" ng-model="config.oddRowColor" config="config" colorkeyword="Odd Rows">
+</pv-color-picker></div>
+<div class="config-option-format">
+	<pv-color-picker id="hoverColor" ng-model="config.hoverColor" config="config" colorkeyword="Mouse-Over">
+</pv-color-picker></div>
+<br/>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Overall Settings</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="backgroundColor" ng-model="config.backgroundColor" config="config" colorkeyword="Background">
+</pv-color-picker></div>
+<div class="config-option-format">
+	<pv-color-picker id="textColor" ng-model="config.textColor" config="config" colorkeyword="Text">
+</pv-color-picker></div>
+<div class="config-option-format">
+	<pv-color-picker id="tableMenuBarColor" ng-model="config.tableMenuBarColor" config="config" colorkeyword="Menu Bar">
+</pv-color-picker></div>
+<div class="config-option-single-row" style="margin-left:20px;margin-right:20px;font-size:14px;">
+    <div class="config-option-ie11-overflow-fix">
+        <div class="config-label">Text Size: {{config.textSize}}px</div>
+        <input class="config-option-single-row-input ng-pristine ng-untouched ng-valid" type="range" min="6" max="30" step="1" ng-model="config.textSize" ng-model-options="{ getterSetter: true }" style="width:100px; height:100%;">
+    </div>
+</div>
+<br/>
+<label style="margin-top:8px; margin-left: 20px;font-size:14px;">
+    Value Decimal Places
+	<input type="number" class="" style="text-align:center;margin-left:10px;"
+		   ng-model="config.numberOfDecimalPlaces">
+</label>
+<div class="config-option-single-row" style="margin-left:20px;margin-right:20px;font-size:14px;margin-top:8px;">
+    <div class="config-option-ie11-overflow-fix">
+        <div class="config-label">Text Alignment</div>
+        <select ng-model="config.textAlignment" ng-model-options="{ getterSetter: true }" class="config-option-single-row-input ng-pristine ng-valid" style="margin-top: 10px;background-color:transparent;padding:4px;">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+        </select>
+    </div>
+</div>
+
+
+
+<br/>
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Custom Data Item Names</span>
+</div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;font-size:14px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.useCustomDataItemNames">Use Custom Data Item Names<br />
+</label>
+<div ng-repeat="i in [0,1,2,3,4,5,6,7,8,9,10,11] track by $index">
+    <label class="flex-align-center" style="font-size:14px;margin-top:8px; margin-left: 8px; margin-right: 8px;margin-bottom:10px;" ng-show="config.useCustomDataItemNames && (config.numberOfDataItems > i)">
+        <input type="text" class="" style="width:50px;margin-left:8px;margin-right: 8px;" ng-model="config.customDataItemNamesArray[i]">
+        {{config.originalDataItemNamesArray[i]}}
+    </label> 
+</div>
+<br />

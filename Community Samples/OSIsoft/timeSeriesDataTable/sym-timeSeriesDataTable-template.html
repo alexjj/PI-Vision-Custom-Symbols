@@ -1,0 +1,38 @@
+<div style="width:100%;height:100%;display:block;overflow-y:auto;overflow-x:hidden">
+	<table id="container" style="width:100%;height:100%;color:white;text-align:left;overflow-y:auto;padding:15px;display:block;border:3px solid {{config.outsideBorderColor}};display:table;">
+	</table>
+<div>
+<style>
+	.myCustomRowClass:nth-child(even) {
+		background: {{config.evenRowColor}}
+	}
+	.myCustomRowClass:nth-child(odd) {
+		background: {{config.oddRowColor}}
+	}	
+	.myCustomRowClass:hover { 
+		background: {{config.hoverColor}}; 
+	}
+	.myCustomCellClass {
+		padding-Left:  10px;
+		padding-Right: 10px;
+		padding-Top:   5px;
+		padding-Bottom:5px;	
+	}
+	.myCustomDataItemCellClass {
+		color: {{config.dataItemColumnColor}};
+		display: {{config.showDataItemNameCheckboxStyle}};
+	}
+	.myCustomTimestampCellClass {
+		color: {{config.timestampColumnColor}};
+		display: {{config.showTimestampCheckboxStyle}};
+	}
+	.myCustomValueCellClass {
+		color: {{config.valueColumnColor}};
+		text-align:right;
+	}	
+	.myCustomHeaderCellClass {
+		border-bottom: 2px solid white;
+		background: {{config.headerBackgroundColor}}; 
+		color: {{config.headerTextColor}}; 
+	}	
+</style>

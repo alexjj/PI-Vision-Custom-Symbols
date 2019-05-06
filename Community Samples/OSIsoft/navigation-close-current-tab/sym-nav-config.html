@@ -1,0 +1,39 @@
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+	
+        <span class="panel-bar-label-no-wrap">General</span>
+
+		<div role="region"> 
+			
+			<div class="config-option-format">   
+				<div class="config-label">Text:</div> 
+
+				<input type="text" ng-model="config.Text">
+				
+			</div>	
+			
+			<div class="config-option-format">   
+				<pv-color-picker colorkeyword="Background" ng-model="config.BackgroundColor" config="config"></pv-color-picker>
+			</div>
+			<div class="config-option-format">   
+				<pv-color-picker colorkeyword="Text" ng-model="config.TextColor" config="config"></pv-color-picker>
+			</div>		
+			
+			
+			<div class="config-option-format">   
+				placeholder for text size
+
+			</div>			
+					<div class="config-option-format">   
+				placeholder for underline, bol, italic
+
+			</div>			
+		</div>
+		
+		
+    </li>
+	
+	 
+</ul>
+
+

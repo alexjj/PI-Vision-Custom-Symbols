@@ -1,0 +1,54 @@
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+	<li class="k-state-active">
+		<span class="panel-bar-label-no-wrap">General</span>
+		<div class="config-option-single-row" style="margin:10px 20px; font-size: 14px;">
+			<div class="config-option-ie11-overflow-fix table-responsive">
+				<table class="custom-config-table">
+					<thead>
+						<tr>
+							<th>Name</th>
+              <th>Link</th>
+              <th>Open in new tab</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<input type="text" ng-model="config.headerLink.Name"/>
+							</td>
+							<td>
+								<input type="text" ng-model="config.headerLink.Url"/>
+              </td>
+              <td>
+								<input type="checkbox" ng-model="config.headerLink.IsNewTab"/>
+							</td>
+							<td>
+								<button class="custom-disabled">
+									<img class="removebutton" src='Scripts/app/editor/symbols/ext/Icons/trashcan.png'></img>
+								</button>
+							</td>
+						</tr>
+						<tr ng-repeat="item in config.Links">
+							<td>
+								<input type="text" ng-model="item.Name"/>
+							</td>
+							<td>
+								<input type="text" ng-model="item.Url"/>
+              </td>
+              <td>
+								<input type="checkbox" ng-model="item.IsNewTab"/>
+							</td>
+							<td>
+								<button ng-click="config.deleteRow($index)">
+									<img class="removebutton" src='Scripts/app/editor/symbols/ext/Icons/trashcan.png'></img>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" ng-click="config.AddNewLink()" class="custom-config-button">Add new link </button>
+			</div>
+		</div>
+	</li>
+</ul>

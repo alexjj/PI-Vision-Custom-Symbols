@@ -1,0 +1,120 @@
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+		<span class="panel-bar-label-no-wrap">General</span>
+		
+		<div role="region"> 
+			<div class="config-option-format">
+				<pv-color-picker colorkeyword="Text" ng-model="config.TextColor" config="config"></pv-color-picker>
+			</div>	
+		</div>
+    </li>
+	
+	<li class="k-state-active">
+        <span class="panel-bar-label-no-wrap">Column Settings</span>
+		
+		<div role="region"> 
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; display:block">
+				<div class="config-label">Default timestamp</div>
+				<input class="flex-align-center" style="margin-top:8px; padding-right: 35px" type="text" ng-model="config.defaultTimestamp"/>
+			</div>	
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; ">
+				<div class="config-label">Show Alternative Name</div>
+				<input class="flex-align-center" style="margin-top:8px; margin-right: 35px;" type="checkbox" ng-model="config.showFriendlyAttName"/>
+			</div>	
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; ">
+				<div class="config-label">Show Attribute</div>
+				<input class="flex-align-center" style="margin-top:8px; margin-right: 35px;" type="checkbox" ng-model="config.showAttribute"/>
+			</div>			
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; ">
+				<div class="config-label">Show Timestamp</div>
+				<input class="flex-align-center" style="margin-top:8px; margin-right: 35px;" type="checkbox" ng-model="config.showTimestamp"/>
+			</div>
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; ">
+				<div class="config-label">Show Current Value</div>
+				<input class="flex-align-center" style="margin-top:8px; margin-right: 35px;" type="checkbox" ng-model="config.showCurrentValue"/>
+			</div>
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px; ">
+				<div class="config-label" style="font-size: 14px;">Value Width</div>
+				<input type="range" ng-model="config.valColWidth" step="1" min="50" max="200" style="width:100px; height:100%; float: right; margin-right:35px;" title="{{config.valColWidth}}">
+			</div>	
+		</div>
+    </li>
+
+	<li class="k-state-active">
+        <span class="panel-bar-label-no-wrap">Row Settings</span>
+		
+		<div role="region"> 
+			<div style="width: 85%; margin: 10px 0 15px 15px;">
+			
+				<div class="trend-config-trace-list" tabindex="0" style="padding: 4px">
+					<div ng-repeat="stream in runtimeData.streamList"
+						 ng-init="runtimeData.selectedStream = 0"
+						 ng-click="runtimeData.selectedStream = $index"
+						 ng-style="runtimeData.streamList.length > 1 && runtimeData.selectedStream === $index && { 'background-color' : '#d5d5d5' }"
+						 class="trend-config-trace-list-item"
+						 title="test">{{stream.Label}}</div>
+				</div>
+				
+				
+				<div class="c-button-default-container" style="padding: 4px 4px 0 4px; margin-top: 0; margin-bottom: 0" ng-if="runtimeData.streamList.length > 1">
+					<button type="button" class="c-primary-button trend-config-trace-arrange-button"
+							ng-click="def.configure.deleteTrace(this.$parent)">
+						<span class="k-icon k-delete"></span>
+					</button>
+				</div>
+				
+			</div>			
+			
+			
+		</div>
+    </li>
+    
+	<li class="k-state-active">
+	    <span class="panel-bar-label-no-wrap">Button Settings</span>
+	
+		<div role="region"> 
+			<div class="config-option-format">
+				<pv-color-picker colorkeyword="Background" ng-model="config.bgColor" config="config"></pv-color-picker>
+			</div>
+
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+				<div class="config-label">Text</div>
+				<input type="text" ng-model="config.btnText"  style="width:100px; height:100%; float: right; margin-right:35px;" class="ng-pristine ng-valid ng-touched">
+			</div>		
+			
+			<div class="config-option-format">
+				<pv-color-picker colorkeyword="Text" ng-model="config.ButtonTextColor" config="config"></pv-color-picker>
+			</div>	
+			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+				<div class="config-label">Width</div>
+				<input type="range" class="config-option-single-row-input" ng-model="config.btnWidth" step="1" min="40" max="200" style="width:100px; height:100%;  margin-right:35px;" title="{{config.btnWidth}}" >
+			</div>
+ 			<div class="config-option-single-row" style="margin-left:20px; font-size: 14px;">
+				<div class="config-label">Height</div>
+				<input type="range" ng-model="config.btnHeight" min="1" max="200" step="1" style="width:100px; height:100%; margin-right:35px;" title="{{config.btnHeight}}" >
+			</div> 
+		</div>
+    </li>
+	
+	<li class="k-state-active">
+	    <span class="panel-bar-label-no-wrap">About</span>
+	
+		<div role="region"> 
+			<div class="config-option-format">   
+				This is an example of custom symbol made with the PI Vision Extensibility Framework.
+			</div>	
+			<div class="config-option-format">   
+				<a  href="https://github.com/AnnaPerry/PI-Coresight-Custom-Symbols/tree/master/Community%20Samples/OSIsoft/manual-data-entry" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/GitHub-Mark-32px.png" alt="GitHub repository with source code" height="32" width="32"/>
+				</a>
+				<span>Explore source code.</span>
+			</div>	
+			<div class="config-option-format">   
+				<a href="https://pisquare.osisoft.com/community/developers-club/pi-visualization-development" target="_blank" >
+					<img style="vertical-align:middle" src="Scripts/app/editor/symbols/ext/Icons/Q.png" alt="PI Square public forum" height="32" width="32"/>
+				</a>	
+				Need help? Ask PI Square.
+			</div>					
+		</div>
+    </li>
+</ul> 

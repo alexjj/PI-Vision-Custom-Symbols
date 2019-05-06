@@ -1,0 +1,11 @@
+
+<ul kendo-panel-bar class="t-side-panel-bgcolor" style="font-size: 14px;">
+    <li class="k-state-active">
+        <span class="panel-bar-label-no-wrap">Color Format</span>
+		<div style="margin: 8px 0;">
+			<div  style="margin: 0 15px; padding: 6px 0" ng-repeat="state in config.states">
+				<pv-color-picker colorkeyword="{{state.Name}}" ng-model="config.colors[$index]"></pv-color-picker>	
+			</div>
+		</div>
+	</li>
+</ul>

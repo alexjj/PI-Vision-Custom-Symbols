@@ -1,0 +1,83 @@
+<!--
+	Copyright 2016-2017 OSIsoft, LLC.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Text</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="textColor" ng-model="config.textColor" config="config">
+</pv-color-picker></div>	
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showTitle">Show Title<br />
+</label> 
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number"
+		   ng-model="config.fontSize">   Text Size<br />
+</label> 	 
+<br />  
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Background</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="backgroundColor" ng-model="config.backgroundColor" config="config">
+</pv-color-picker></div>	
+<br />
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Plot Area</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="plotAreaFillColor" ng-model="config.plotAreaFillColor" config="config">
+</pv-color-picker></div>	
+
+<br />    
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Series</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="seriesColor" ng-model="config.seriesColor" config="config">
+</pv-color-picker></div>
+
+<br>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showChartScrollBar">Show Chart Scroll Bar<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.useColumns">Use Columns<br />
+</label>	
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.useCustomYAxisRange">Use Custom Y Axis Range<br />
+</label>  
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number"
+		   ng-model="config.minimumYValue">   Minimum Value<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number"
+		   ng-model="config.maximumYValue">   Maximum Value<br />
+</label>
+<br />
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.exportData">Export Data<br />
+</label>	
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.exportDataItemPaths">Export Data Item Paths<br />
+</label>		
+<br />

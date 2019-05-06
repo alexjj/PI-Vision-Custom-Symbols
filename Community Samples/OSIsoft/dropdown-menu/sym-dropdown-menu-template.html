@@ -1,0 +1,8 @@
+<ul class="custom-menu">
+  <li class="custom-dropdown">
+    <a ng-class="config.headerLink.Url ? 'custom-cursor-pointer' : ''" ng-href="{{config.headerLink.Url}}" class="custom-dropdown-button" target="{{config.headerLink.IsNewTab ? '_blank' : '_self'}}">{{config.headerLink.Name}}</a>
+    <div class="custom-dropdown-content">
+      <a ng-class="item.Url ? 'custom-cursor-pointer' : ''" ng-href="{{item.Url}}" ng-repeat="item in config.Links" target="{{item.IsNewTab ? '_blank' : '_self'}}">{{item.Name}}</a>
+    </div>
+  </li>
+</ul>

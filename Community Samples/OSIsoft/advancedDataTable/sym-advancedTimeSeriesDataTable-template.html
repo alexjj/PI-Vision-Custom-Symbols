@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+<table id="container" class="display hover cell-border" style="font-size:{{config.textSize}}px !important;width:100% !important;background-color:{{config.backgroundColor}};color:{{config.textColor}};text-align:{{config.textAlignment}}!important;"></table>
+
+<style>
+	table.dataTable tr:nth-child(even) {
+		background: {{config.evenRowColor}} !important;
+	}
+	table.dataTable tr:nth-child(odd) {
+		background: {{config.oddRowColor}} !important;
+	}	
+	table.dataTable tr:hover { 
+		background: {{config.hoverColor}} !important;
+	}
+	table.dataTable th {
+		background: {{config.backgroundColor}} !important;
+        color: {{config.textColor}};
+	}  
+    div.dataTables_filter {
+        color:white !important;
+    }
+    .dataTables_filter input {
+        width:auto;
+        margin-left:4px;
+        margin-right:4px;
+        margin-bottom:4px;
+    }
+    .dataTables_wrapper {
+        font-size:{{config.textSize}}px !important;
+    }
+    table.dataTable {
+        font-size:{{config.textSize}}px !important;
+    }
+    table.dataTable thead {
+        font-size:{{config.textSize}}px !important;
+        text-align:{{config.textAlignment}}!important;
+    }
+    .dt-button-collection {
+        width:auto !important;
+    }
+    div.dt-buttons {
+        padding-top:2px;
+        padding-left:4px;
+    }
+    div.DTS {
+        background-color:{{config.tableMenuBarColor}};
+        padding-top:4px;
+        padding-bottom:1px;
+    }
+    .dataTables_scrollHeadInner {
+        background: {{config.backgroundColor}} !important;
+    }
+    .dataTables_scrollFootInner {
+        background: {{config.backgroundColor}} !important;
+    }    
+    
+</style>

@@ -1,0 +1,52 @@
+<!--
+	Copyright 2016-2017 OSIsoft, LLC.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<div class="c-side-pane t-toolbar">
+    <span style="color:#FF0000; margin-left:15px">Red</span>
+</div>
+<div class="c-config-content">
+    > <input type="inputbox" ng-model="config.RedMin" text="10"> (mins)
+</div>
+<div class="c-config-content">
+    <= <input type="inputbox" ng-model="config.RedMax" text="30"> (mins) 
+</div>
+<div class="c-side-pane t-toolbar">
+    <span style="color:#FFFF00; margin-left:15px">Yellow</span>
+</div>
+<div class="c-config-content">
+    > <input type="inputbox" ng-model="config.YellowMix" text="5"> (mins)
+</div>
+<div class="c-config-content">
+    <= <input type="inputbox" ng-model="config.YellowMax" text="10"> (mins) 
+</div>
+<div class="c-side-pane t-toolbar">
+    <span style="color:#B3EE3A; margin-left:15px">Green</span>
+</div>
+<div class="c-config-content">
+    > <input type="inputbox" ng-model="config.GreenMin" text="-1"> (mins)
+</div>
+<div class="c-config-content">
+	<= <input type="inputbox" ng-model="config.GreenMax" text="5"> (mins) 
+</div>
+<div class="c-side-pane t-toolbar">
+    <span style="color:#FFFFFF; margin-left:15px">White</span>
+</div>
+<div class="c-config-content">
+    > <input type="inputbox" ng-model="config.WhiteMin" text="-2"> (mins)
+</div>
+<div class="c-config-content">
+	<= <input type="inputbox" ng-model="config.WhiteMax" text="-1"> (mins) 
+</div>
+

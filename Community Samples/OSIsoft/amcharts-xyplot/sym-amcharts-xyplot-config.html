@@ -1,0 +1,96 @@
+<!--
+	Copyright 2016-2017 OSIsoft, LLC.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Bullet</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="bulletColor" ng-model="config.bulletColor" config="config">
+</pv-color-picker></div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.bulletSize">   Bullet Size<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.bulletOpacity">   Bullet Opacity (0-1)<br />
+</label>	
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">Bullet Type   
+	<select class="" ng-model="config.bulletType">
+		<option value="round">round</option>
+		<option value="square">square</option>
+		<option value="triangleUp">triangleUp</option>
+		<option value="triangleDown">triangleDown</option>
+		<option value="triangleLeft">triangleLeft</option>
+		<option value="triangleRight">triangleRight</option>
+		<option value="bubble">bubble</option>
+		<option value="diamond">diamond</option>
+	</select>
+</label>
+
+<br />
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Cursor</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="cursorColor" ng-model="config.cursorColor" config="config">
+</pv-color-picker></div>
+
+<br />
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Trend Line</span>
+</div>
+<div class="config-option-format">
+	<pv-color-picker id="trendLineColor" ng-model="config.trendLineColor" config="config">
+</pv-color-picker></div>	
+
+<br />
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.forceXYTimestampSync">Only Include Matching Timestamps<br />
+</label>
+<br />
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showTrendLines">Show Trend Line<br />
+</label>
+<div style="margin-top:8px;font-style:italic">Note: to add a Trend Line, drag onto the chart a static string Attribute whose value is in the form x1,y1;x2,y2;x3,y3</div>
+
+<br />
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showTitle">Show Title<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.autoScale">Auto-scale axes<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.xMin">   X-axis Minimum<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.xMax">   X-axis Maximum<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.yMin">   Y-axis Minimum<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.yMax">   Y-axis Maximum<br />
+</label>
+<br />

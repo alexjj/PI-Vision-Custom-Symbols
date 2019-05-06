@@ -1,0 +1,95 @@
+<!--
+	Copyright 2017 OSIsoft, LLC.
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+		http://www.apache.org/licenses/LICENSE-2.0
+			
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<br/>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showValueCheckboxValue">Show Value<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="checkbox" class="c-config-checkbox"
+		   ng-model="config.showTitleCheckboxValue">Show Title<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeAngle">   Gauge Angle<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class="" min="0.1"
+		   ng-model="config.gaugeInterval">   Gauge Tick Mark Interval<br />
+</label>	
+
+<br/>
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Zone 1</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="gaugeZone1Color" ng-model="config.gaugeZone1Color" config="config">
+</pv-color-picker></div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeMinimum">   Minimum Value<br />
+</label>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeZone1Maximum">   Zone 1 Maximum Value<br />
+</label>
+<br>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Zone 2</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="gaugeZone2Color" ng-model="config.gaugeZone2Color" config="config">
+</pv-color-picker></div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeZone2Maximum">   Zone 2 Maximum Value<br />
+</label>
+<br>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Zone 3</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="gaugeZone3Color" ng-model="config.gaugeZone3Color" config="config">
+</pv-color-picker></div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeZone3Maximum">   Zone 3 Maximum Value<br />
+</label>
+<br>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Zone 4</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="gaugeZone4Color" ng-model="config.gaugeZone4Color" config="config">
+</pv-color-picker></div>
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeZone4Maximum">   Zone 4 Maximum Value<br />
+</label>
+<br>
+
+<div class="c-side-pane t-toolbar">
+	<span style="color:#fff; margin-left:10px;">Zone 5</span>
+</div>
+<div class="config-option-format">
+<pv-color-picker id="gaugeZone5Color" ng-model="config.gaugeZone5Color" config="config">
+</pv-color-picker></div>	
+<label class="flex-align-center" style="margin-top:8px; margin-left: 8px;">
+	<input type="number" class=""
+		   ng-model="config.gaugeZone5Maximum">   Maximum Value<br />
+</label>
+<br>
