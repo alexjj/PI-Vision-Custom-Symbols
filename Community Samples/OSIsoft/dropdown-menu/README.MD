@@ -4,7 +4,7 @@ This symbol is a work in progress.
 
 This symbol is for PI Vision version 2017.
 
-<img src="https://github.com/AnnaPerry/PI-Coresight-Custom-Symbols/blob/master/Community%20Samples/OSIsoft/dropdown-menu/Example.png" 
+<img src="https://github.com/alexjj/PI-Vision-Custom-Symbols/blob/master/Community%20Samples/OSIsoft/dropdown-menu/Example.png" 
 alt="DropDown Menu for PI Vision" />
 
 ## To deploy the symbol: 
