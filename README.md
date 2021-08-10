@@ -1,3 +1,7 @@
+# I forked this as OSISoft took down their Github repos, but I did not create it. For support visit [OSISoft forums](https://pisquare.osisoft.com/s/).
+
+---
+
 # PI Vision Extensibility Samples and Tutorials
 
 ## About
